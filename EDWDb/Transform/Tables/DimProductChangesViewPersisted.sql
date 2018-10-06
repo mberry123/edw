@@ -1,0 +1,27 @@
+﻿CREATE TABLE [Transform].[DimProductChangesViewPersisted] (
+    [ProductCode]                  NVARCHAR (25)   NULL,
+    [ProductCategoryName]          NVARCHAR (50)   NULL,
+    [ProductSubcategoryName]       NVARCHAR (50)   NULL,
+    [ProductWeightUnitMeasureCode] NCHAR (3)       NULL,
+    [ProductSizeUnitMeasureCode]   NCHAR (3)       NULL,
+    [ProductName]                  NVARCHAR (50)   NULL,
+    [ProductStandardCost]          MONEY           NULL,
+    [ProductFinishedGoodsFlag]     BIT             NULL,
+    [ProductColour]                NVARCHAR (15)   NULL,
+    [ProductSafetyStockLevel]      SMALLINT        NULL,
+    [ProductReorderPoint]          SMALLINT        NULL,
+    [ProductListPrice]             MONEY           NULL,
+    [ProductSize]                  NVARCHAR (5)    NULL,
+    [ProductSizeRange]             NVARCHAR (8)    NULL,
+    [ProductWeight]                DECIMAL (8, 2)  NULL,
+    [ProductDaysToManufacture]     INT             NULL,
+    [ProductLine]                  NCHAR (2)       NULL,
+    [DealerPrice]                  MONEY           NULL,
+    [ProductClass]                 NCHAR (2)       NULL,
+    [ProductStyle]                 NCHAR (2)       NULL,
+    [ProductModelName]             NVARCHAR (50)   NULL,
+    [ProductLargePhoto]            VARBINARY (MAX) NULL,
+    [ProductDescription]           NVARCHAR (400)  NULL,
+    [ProductID]                    INT             NULL
+);
+

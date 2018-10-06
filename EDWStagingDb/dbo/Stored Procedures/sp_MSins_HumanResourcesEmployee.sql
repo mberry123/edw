@@ -1,0 +1,51 @@
+﻿create procedure [sp_MSins_HumanResourcesEmployee]
+    @c1 int,
+    @c2 nvarchar(15),
+    @c3 nvarchar(256),
+    @c4 [hierarchyid],
+    @c5 nvarchar(50),
+    @c6 date,
+    @c7 nchar(1),
+    @c8 nchar(1),
+    @c9 date,
+    @c10 bit,
+    @c11 smallint,
+    @c12 smallint,
+    @c13 bit,
+    @c14 uniqueidentifier,
+    @c15 datetime
+as
+begin  
+	insert into [HumanResources].[Employee] (
+		[BusinessEntityID],
+		[NationalIDNumber],
+		[LoginID],
+		[OrganizationNode],
+		[JobTitle],
+		[BirthDate],
+		[MaritalStatus],
+		[Gender],
+		[HireDate],
+		[SalariedFlag],
+		[VacationHours],
+		[SickLeaveHours],
+		[CurrentFlag],
+		[rowguid],
+		[ModifiedDate]
+	) values (
+		@c1,
+		@c2,
+		@c3,
+		@c4,
+		@c5,
+		@c6,
+		@c7,
+		@c8,
+		@c9,
+		@c10,
+		@c11,
+		@c12,
+		@c13,
+		@c14,
+		@c15	) 
+end  

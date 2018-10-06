@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "EDWDb", "EDWDb\EDWDb.sqlproj", "{F4204B73-D3CF-45EA-A35E-E23F3ABDBD62}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "EDWStagingDb", "EDWStagingDb\EDWStagingDb.sqlproj", "{74E84DFE-BE3A-4A58-9A88-EB76DA9258EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,12 @@ Global
 		{F4204B73-D3CF-45EA-A35E-E23F3ABDBD62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4204B73-D3CF-45EA-A35E-E23F3ABDBD62}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F4204B73-D3CF-45EA-A35E-E23F3ABDBD62}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{74E84DFE-BE3A-4A58-9A88-EB76DA9258EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74E84DFE-BE3A-4A58-9A88-EB76DA9258EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74E84DFE-BE3A-4A58-9A88-EB76DA9258EC}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{74E84DFE-BE3A-4A58-9A88-EB76DA9258EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74E84DFE-BE3A-4A58-9A88-EB76DA9258EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74E84DFE-BE3A-4A58-9A88-EB76DA9258EC}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

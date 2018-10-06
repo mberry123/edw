@@ -14,7 +14,7 @@
     </RootPath>
     <RootNamespace>EDWDb</RootNamespace>
     <AssemblyName>EDWDb</AssemblyName>
-    <ModelCollation>1033, CI</ModelCollation>
+    <ModelCollation>1033,CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -23,6 +23,8 @@
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>Latin1_General_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -57,5 +59,369 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="Transform\" />
+    <Folder Include="Transform\Tables\" />
+    <Folder Include="Controller\" />
+    <Folder Include="Controller\Tables\" />
+    <Folder Include="Model\" />
+    <Folder Include="Model\Tables\" />
+    <Folder Include="Audit\" />
+    <Folder Include="Audit\Tables\" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="Tabular\" />
+    <Folder Include="Tabular\Tables\" />
+    <Folder Include="Transform\Views\" />
+    <Folder Include="Model\Views\" />
+    <Folder Include="Report\" />
+    <Folder Include="Report\Views\" />
+    <Folder Include="Storage\" />
+    <Folder Include="Security\" />
+    <Folder Include="Report\Functions\" />
+    <Folder Include="Support\" />
+    <Folder Include="Support\Functions\" />
+    <Folder Include="Transform\Functions\" />
+    <Folder Include="Controller\Functions\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="Controller\Stored Procedures\" />
+    <Folder Include="Report\Stored Procedures\" />
+    <Folder Include="Audit\Stored Procedures\" />
+    <Folder Include="Transform\Stored Procedures\" />
+    <Folder Include="Support\Stored Procedures\" />
+    <Folder Include="Model\Stored Procedures\" />
+    <Folder Include="Controller\User Defined Types\" />
+    <Folder Include="Assemblies\" />
+    <Folder Include="Service Broker\" />
+    <Folder Include="Controller\XMLSchemaCollections\" />
+    <Folder Include="Controller\Sequences\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Transform\Tables\DimSalesTerritoryChanges.sql" />
+    <Build Include="Controller\Tables\ServiceEventLog.sql" />
+    <Build Include="Transform\Tables\FactResellerSalesChangedKeys.sql" />
+    <Build Include="Model\Tables\DimReseller.sql" />
+    <Build Include="Audit\Tables\ExecutionChangedKeyCounts.sql" />
+    <Build Include="Transform\Tables\FactResellerSalesChanges.sql" />
+    <Build Include="Audit\Tables\ModelExecutionStats.sql" />
+    <Build Include="Controller\Tables\Configuration.sql" />
+    <Build Include="Transform\Tables\DimEmployeeChangedKeys.sql" />
+    <Build Include="Model\Tables\DimSalesTerritory.sql" />
+    <Build Include="dbo\Tables\SalesCountryFlags.sql" />
+    <Build Include="Controller\Tables\ExecutionState.sql" />
+    <Build Include="Transform\Tables\DimProductChangedKeys.sql" />
+    <Build Include="Transform\Tables\FactInternetSalesChangedKeys.sql" />
+    <Build Include="Model\Tables\FactResellerSales.sql" />
+    <Build Include="dbo\Tables\ViewMetadata.sql" />
+    <Build Include="Model\Tables\DimDate.sql" />
+    <Build Include="Tabular\Tables\ConbinedSalesLastInternetSales.sql" />
+    <Build Include="Transform\Tables\DimCustomerChanges.sql" />
+    <Build Include="Tabular\Tables\ConbinedSalesLastResellerSales.sql" />
+    <Build Include="Model\Tables\DimCustomer.sql" />
+    <Build Include="Transform\Tables\DimDescriptionChanges.sql" />
+    <Build Include="Transform\Tables\DimEmployeeChanges.sql" />
+    <Build Include="Model\Tables\FactInternetSales.sql" />
+    <Build Include="Transform\Tables\DimCustomerChangedKeys.sql" />
+    <Build Include="Transform\Tables\DimDescriptionChangedKeys.sql" />
+    <Build Include="Transform\Tables\DimEmployeeChangesViewPersisted.sql" />
+    <Build Include="Transform\Tables\DimSalesTerritoryChangesPersisted.sql" />
+    <Build Include="Transform\Tables\DimProductChangesViewPersisted.sql" />
+    <Build Include="Transform\Tables\DimEmployeeTemp.sql" />
+    <Build Include="Transform\Tables\DimProductChanges.sql" />
+    <Build Include="Transform\Tables\DimProductTemp.sql" />
+    <Build Include="Transform\Tables\DimSalesTerritoryChangesViewPersisted.sql" />
+    <Build Include="Transform\Tables\DimSalesTerritoryTemp.sql" />
+    <Build Include="Transform\Tables\DimDescriptionChangesViewPersisted.sql" />
+    <Build Include="Transform\Tables\DimDescriptionTemp.sql" />
+    <Build Include="Model\Tables\DimDescription.sql" />
+    <Build Include="Transform\Tables\DimResellerChangesViewPersisted.sql" />
+    <Build Include="Transform\Tables\DimResellerTemp.sql" />
+    <Build Include="Transform\Tables\DimPromotionChangesViewPersisted.sql" />
+    <Build Include="Transform\Tables\DimPromotionTemp.sql" />
+    <Build Include="Transform\Tables\DimCustomerChangesViewPersisted.sql" />
+    <Build Include="Transform\Tables\DimCustomerTemp.sql" />
+    <Build Include="Transform\Tables\DimPromotionChanges.sql" />
+    <Build Include="Transform\Tables\FactResellerSalesChangesViewPersistedForLAD.sql" />
+    <Build Include="Model\Tables\DimEmployee.sql" />
+    <Build Include="Transform\Tables\FactInternetSalesChangesViewPersistedForLAD.sql" />
+    <Build Include="Transform\Tables\FactInternetSalesTemp.sql" />
+    <Build Include="Transform\Tables\FactResellerSalesTemp.sql" />
+    <Build Include="Transform\Tables\DimResellerChanges.sql" />
+    <Build Include="Transform\Tables\FactInternetSalesChanges.sql" />
+    <Build Include="Transform\Tables\DimEmployeeChangesPersisted.sql" />
+    <Build Include="Model\Tables\DimProduct.sql" />
+    <Build Include="Transform\Tables\EDWDayEndProcedureLog.sql" />
+    <Build Include="Model\Tables\DimPromotion.sql" />
+    <Build Include="Transform\Views\FactResellerSalesChangesView.sql" />
+    <Build Include="Transform\Views\DimCustomerChangesView.sql" />
+    <Build Include="Model\Views\DimCurrencyView.sql" />
+    <Build Include="Model\Views\DimSalesTerritoryView.sql" />
+    <Build Include="Model\Views\DimDateView.sql" />
+    <Build Include="Model\Views\DimCustomerView.sql" />
+    <Build Include="Report\Views\DataDictionary.sql" />
+    <Build Include="Transform\Views\FactInternetSalesChangesView.sql" />
+    <Build Include="Model\Views\DimEmployeeView.sql" />
+    <Build Include="Transform\Views\DimDescriptionChangesView.sql" />
+    <Build Include="Model\Views\DimProductView.sql" />
+    <Build Include="Model\Views\FactResellerSalesView.sql" />
+    <Build Include="Model\Views\DimDescriptionView.sql" />
+    <Build Include="Model\Views\DimResellerView.sql" />
+    <Build Include="Transform\Views\DimProductChangesView.sql" />
+    <Build Include="Transform\Views\DimEmployeeChangesView.sql" />
+    <Build Include="Transform\Views\DimPromotionChangesView.sql" />
+    <Build Include="Model\Views\FactInternetSalesView.sql" />
+    <Build Include="Transform\Views\DimResellerChangesView.sql" />
+    <Build Include="Transform\Views\DimSalesTerritoryChangesView.sql" />
+    <Build Include="Model\Views\DimPromotionView.sql" />
+    <Build Include="Storage\FactPartition2005.sql" />
+    <Build Include="Storage\FactPartition2006.sql" />
+    <Build Include="Storage\FactPartition2007.sql" />
+    <Build Include="Storage\FactPartition2008.sql" />
+    <Build Include="Storage\FactPartition2009.sql" />
+    <Build Include="Storage\FactPartition2010.sql" />
+    <Build Include="Storage\FactPartition2011.sql" />
+    <Build Include="Storage\FactPartition2012.sql" />
+    <Build Include="Storage\FactPartitionDefault.sql" />
+    <Build Include="Security\DESKTOP-9JH6FOM_mmber.sql" />
+    <Build Include="Security\DESKTOP-9JH6FOM_mmber_1.sql" />
+    <Build Include="Security\DESKTOP-9JH6FOM_georg.sql" />
+    <Build Include="Security\DESKTOP-9JH6FOM_georg_1.sql" />
+    <Build Include="Security\DESKTOP-9JH6FOM_paulb.sql" />
+    <Build Include="Security\DESKTOP-9JH6FOM_paulb_1.sql" />
+    <Build Include="Security\DESKTOP-9JH6FOM_johnb.sql" />
+    <Build Include="Security\DESKTOP-9JH6FOM_johnb_1.sql" />
+    <Build Include="Security\DESKTOP-9JH6FOM_ringo.sql" />
+    <Build Include="Security\DESKTOP-9JH6FOM_ringo_1.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="Report\Functions\fnMER15GetBatchNumberForDate.sql" />
+    <Build Include="Support\Functions\GetDateFromInt.sql" />
+    <Build Include="Support\Functions\GetJobLastRunTime.sql" />
+    <Build Include="Transform\Functions\fnCaseIsVaryingInstalmentValues.sql" />
+    <Build Include="Transform\Functions\fnConvertToCapitals.sql" />
+    <Build Include="Transform\Functions\fnGetCharTimeFromSeconds.sql" />
+    <Build Include="Transform\Functions\fnGetHMRCTaxYearPaymentAssignment.sql" />
+    <Build Include="Transform\Functions\fnGetHMRCTaxYearReversalAdjustment.sql" />
+    <Build Include="Transform\Functions\fnGetLesserValue.sql" />
+    <Build Include="Transform\Functions\fnGetQuarterPeriodFromTime.sql" />
+    <Build Include="Transform\Functions\fnGetTimeFromInteger.sql" />
+    <Build Include="Controller\Functions\fnGetConfigurationItem.sql" />
+    <Build Include="Controller\Functions\fnGetDateCurrentBespokeQuarter.sql" />
+    <Build Include="Controller\Functions\fnGetDateEndOfMonthOnSpecificDay.sql" />
+    <Build Include="Controller\Functions\fnGetDatePreviousBespokeMonth.sql" />
+    <Build Include="Controller\Functions\fnGetExecutionState.sql" />
+    <Build Include="Controller\Functions\fnGetICSSystemDateCurrentBespokeQuarter.sql" />
+    <Build Include="Controller\Functions\fnGetICSSystemDateDayOfMonth.sql" />
+    <Build Include="Controller\Functions\fnGetICSSystemDateDayOfPreviousMonth.sql" />
+    <Build Include="Controller\Functions\fnGetICSSystemDatePreviousBespokeMonth.sql" />
+    <Build Include="Controller\Functions\fnGetICSSystemDatePreviousHalfYear.sql" />
+    <Build Include="Controller\Functions\fnGetICSSystemDatePreviousMonth.sql" />
+    <Build Include="Controller\Functions\fnGetICSSystemDatePreviousWeek.sql" />
+    <Build Include="Controller\Functions\fnGetICSSystemDateSpecificDay.sql" />
+    <Build Include="Controller\Functions\fnModelEntityPrimaryKey.sql" />
+    <Build Include="Controller\Functions\GetErrorXml.sql" />
+    <Build Include="dbo\Functions\fnGetStringFromList.sql" />
+    <Build Include="dbo\Functions\fnGetStringInstanceCount.sql" />
+    <Build Include="dbo\Functions\fnRegexFind.sql" />
+    <Build Include="dbo\Functions\fnRegexReplace.sql" />
+    <Build Include="Transform\Functions\fnRegexFind.sql" />
+    <Build Include="Report\Functions\fnUnstringParameterList.sql" />
+    <Build Include="Transform\Functions\fnDimDateVersions.sql" />
+    <Build Include="Transform\Functions\fnDimDescriptionVersions.sql" />
+    <Build Include="Transform\Functions\fnDimEmployeeVersions.sql" />
+    <Build Include="Transform\Functions\fnDimProductVersions.sql" />
+    <Build Include="Transform\Functions\fnDimPromotionVersions.sql" />
+    <Build Include="Transform\Functions\fnDimResellerVersions.sql" />
+    <Build Include="Transform\Functions\fnDimCustomerVersions.sql" />
+    <Build Include="Controller\Functions\fnModelTables.sql" />
+    <Build Include="Controller\Functions\fnModelColumns.sql" />
+    <Build Include="Transform\Functions\fnDimSalesTerritoryVersions.sql" />
+    <Build Include="Controller\Stored Procedures\ReportPublisherStartService.sql" />
+    <Build Include="Controller\Stored Procedures\ReportPublisherSubstituteValueFunctions.sql" />
+    <Build Include="Controller\Stored Procedures\SSISExecutePackage.sql" />
+    <Build Include="Report\Stored Procedures\ProductCatalog.sql" />
+    <Build Include="Audit\Stored Procedures\CountFactResellerSalesChangedKeys.sql" />
+    <Build Include="Transform\Stored Procedures\GetFactResellerSalesChangedKeys.sql" />
+    <Build Include="Transform\Stored Procedures\GetDimEmployeeChangedKeys.sql" />
+    <Build Include="Support\Stored Procedures\GetReportPublisherExceptions.sql" />
+    <Build Include="Controller\Stored Procedures\CheckPreviousETLStatus.sql" />
+    <Build Include="Audit\Stored Procedures\CountFactInternetSalesChangedKeys.sql" />
+    <Build Include="Support\Stored Procedures\GetSQLAgentDisabledJobs.sql" />
+    <Build Include="Controller\Stored Procedures\ConfigurationUpdateSingleKey.sql" />
+    <Build Include="Transform\Stored Procedures\GetFactInternetSalesChangedKeys.sql" />
+    <Build Include="Support\Stored Procedures\GetSQLAgentJobExceptions.sql" />
+    <Build Include="Controller\Stored Procedures\ETLInsertFactChanges.sql" />
+    <Build Include="Support\Stored Procedures\GetSSISPackageExceptions.sql" />
+    <Build Include="Controller\Stored Procedures\ETLInsertLateArrivingDimensionMembers.sql" />
+    <Build Include="Support\Stored Procedures\GetStrategyScorecardExceptions.sql" />
+    <Build Include="Controller\Stored Procedures\ETLLoadFact.sql" />
+    <Build Include="Support\Stored Procedures\ReportPublisherServiceStatus.sql" />
+    <Build Include="Controller\Stored Procedures\ETLLoadFactAccumulatingSnapshot.sql" />
+    <Build Include="Support\Stored Procedures\SendExceptionNotifications.sql" />
+    <Build Include="Controller\Stored Procedures\ETLLoadFactTransaction.sql" />
+    <Build Include="Controller\Stored Procedures\ETLLoadModelEntity.sql" />
+    <Build Include="Audit\Stored Procedures\CountDimCustomerChangedKeys.sql" />
+    <Build Include="Controller\Stored Procedures\ETLLogNonChangedKeyTables.sql" />
+    <Build Include="Controller\Stored Procedures\ETLPersistTransformViewForLAD.sql" />
+    <Build Include="Controller\Stored Procedures\ETLPrepareFactTransformTable.sql" />
+    <Build Include="Controller\Stored Procedures\ETLPrepareModelEntityTransformTable.sql" />
+    <Build Include="Controller\Stored Procedures\ETLRefreshSnapshotDatabase.sql" />
+    <Build Include="Controller\Stored Procedures\ETLReplaceTokenForColumnUpdate.sql" />
+    <Build Include="Controller\Stored Procedures\ETLReplaceTokenForColumnUpdatePredicates.sql" />
+    <Build Include="Controller\Stored Procedures\ETLReplaceTokenForModelEntityBKJoin.sql" />
+    <Build Include="Controller\Stored Procedures\ETLReplaceTokenForModelEntityColumn.sql" />
+    <Build Include="Controller\Stored Procedures\ETLReplaceTokenForModelEntityPKJoin.sql" />
+    <Build Include="Controller\Stored Procedures\ETLReplaceTokenForModelEntityVersions.sql" />
+    <Build Include="Controller\Stored Procedures\ETLReplaceTokenForSCDColumn.sql" />
+    <Build Include="Controller\Stored Procedures\ETLReplaceTokenForSCDColumnModelEntityValue.sql" />
+    <Build Include="Controller\Stored Procedures\ETLReplaceTokenJoinCondition.sql" />
+    <Build Include="Controller\Stored Procedures\ETLReplaceTokenSCDBitmap.sql" />
+    <Build Include="Report\Stored Procedures\BusMatrix.sql" />
+    <Build Include="Controller\Stored Procedures\ETLSetServiceStatus.sql" />
+    <Build Include="Controller\Stored Procedures\ETLTransformDailyUpdate.sql" />
+    <Build Include="Controller\Stored Procedures\ETLTransformFactAccumulatingSnapshotChanges.sql" />
+    <Build Include="Report\Stored Procedures\EDWStatusLatestData.sql" />
+    <Build Include="Controller\Stored Procedures\ETLTransformFactFactlessChanges.sql" />
+    <Build Include="Controller\Stored Procedures\ETLTransformFactTransactionChanges.sql" />
+    <Build Include="Controller\Stored Procedures\ETLTransformModelEntityChanges.sql" />
+    <Build Include="Transform\Stored Procedures\InternetSalesDailyAggregate.sql" />
+    <Build Include="Controller\Stored Procedures\ETLUpdateChangedKeys.sql" />
+    <Build Include="Controller\Stored Procedures\GetServiceEventDetails.sql" />
+    <Build Include="Controller\Stored Procedures\LogEvent.sql" />
+    <Build Include="Controller\Stored Procedures\SaveExecutionState.sql" />
+    <Build Include="Controller\Stored Procedures\SendMessage.sql" />
+    <Build Include="Controller\Stored Procedures\StrategyScorecardExport.sql" />
+    <Build Include="Controller\Stored Procedures\UpdateConfiguration.sql" />
+    <Build Include="Controller\Stored Procedures\UtilPersistView.sql" />
+    <Build Include="Transform\Stored Procedures\InternetSalesMonthlyAggregate.sql" />
+    <Build Include="Controller\Stored Procedures\UtilRemoveTokens.sql" />
+    <Build Include="Transform\Stored Procedures\InternetSalesWeeklyAggregate.sql" />
+    <Build Include="Controller\Stored Procedures\UtilSplitListToRecords.sql" />
+    <Build Include="Transform\Stored Procedures\ResellerSalesDailyAggregate.sql" />
+    <Build Include="Transform\Stored Procedures\ResellerSalesWeeklyAggregate.sql" />
+    <Build Include="Transform\Stored Procedures\ResellerSalesMonthlyAggregate.sql" />
+    <Build Include="Report\Stored Procedures\BusMatrixStarSchema.sql" />
+    <Build Include="Transform\Stored Procedures\GetDimCustomerChangedKeys.sql" />
+    <Build Include="Transform\Stored Procedures\GetDimDescriptionChangedKeys.sql" />
+    <Build Include="Controller\Stored Procedures\RetryBureauSearchRequestProcessFailures.sql" />
+    <Build Include="Audit\Stored Procedures\CountDimDescriptionChangedKeys.sql" />
+    <Build Include="Audit\Stored Procedures\CountDimEmployeeChangedKeys.sql" />
+    <Build Include="Transform\Stored Procedures\InsertDimensionDefaults.sql" />
+    <Build Include="Controller\Stored Procedures\ReportPublisherAutomatedRetryService.sql" />
+    <Build Include="Controller\Stored Procedures\ReportPublisherConfigurationXml.sql" />
+    <Build Include="Controller\Stored Procedures\ReportPublisherEventPostDayEnd06.sql" />
+    <Build Include="Controller\Stored Procedures\ReportPublisherEventPostDayEnd08.sql" />
+    <Build Include="Controller\Stored Procedures\ReportPublisherEventPostDayEnd09.sql" />
+    <Build Include="Controller\Stored Procedures\ReportPublisherEventPostDayEnd10.sql" />
+    <Build Include="Controller\Stored Procedures\ReportPublisherEventPostDayEnd15.sql" />
+    <Build Include="Controller\Stored Procedures\ReportPublisherEventPostDayEnd21.sql" />
+    <Build Include="Controller\Stored Procedures\ReportPublisherEventPostDayEndDaily.sql" />
+    <Build Include="Controller\Stored Procedures\ReportPublisherEventPostDayEndMonthEndingFriday.sql" />
+    <Build Include="Controller\Stored Procedures\ReportPublisherEventPostDayEndMonthly.sql" />
+    <Build Include="Controller\Stored Procedures\ReportPublisherEventPostDayEndQuarterly.sql" />
+    <Build Include="Controller\Stored Procedures\ReportPublisherEventPostDayEndWeekEndingFriday.sql" />
+    <Build Include="Controller\Stored Procedures\ReportPublisherEventPostDayEndWeekly.sql" />
+    <Build Include="Controller\Stored Procedures\ReportPublisherEventPostDayEndYearly.sql" />
+    <Build Include="Transform\Stored Procedures\GetDimProductChangedKeys.sql" />
+    <Build Include="Controller\Stored Procedures\ReportPublisherExecuteMappedPackage.sql" />
+    <Build Include="Model\Stored Procedures\ListModelAttributes.sql" />
+    <Build Include="Controller\Stored Procedures\ReportPublisherFlushUserParameters.sql" />
+    <Build Include="Controller\Stored Procedures\ReportPublisherGetBatchXml.sql" />
+    <Build Include="Audit\Stored Procedures\CountDimProductChangedKeys.sql" />
+    <Build Include="Controller\Stored Procedures\ReportPublisherProcessConsolidateQueue.sql" />
+    <Build Include="Controller\Stored Procedures\ReportPublisherProcessControllerChildQueue.sql" />
+    <Build Include="Controller\Stored Procedures\ReportPublisherProcessControllerQueue.sql" />
+    <Build Include="Controller\Stored Procedures\ReportPublisherProcessExceptionQueue.sql" />
+    <Build Include="Controller\Stored Procedures\ReportPublisherProcessFailedQueue.sql" />
+    <Build Include="Controller\Stored Procedures\ReportPublisherProcessMoveQueue.sql" />
+    <Build Include="Controller\Stored Procedures\ReportPublisherProcessRenderQueue.sql" />
+    <Build Include="Controller\Stored Procedures\ReportPublisherPurgeFailures.sql" />
+    <Build Include="Controller\Stored Procedures\ReportPublisherRefreshConfigurationXml.sql" />
+    <Build Include="Controller\Stored Procedures\ReportPublisherRetryService.sql" />
+    <Build Include="Controller\Stored Procedures\ReportPublisherSendExecutionCompletionMessage.sql" />
+    <Build Include="Controller\User Defined Types\PackageParametersType.sql" />
+    <Build Include="Controller\User Defined Types\TableListType.sql" />
+    <Build Include="Service Broker\__ReportPublisher_Contract_Asynchronous.sql" />
+    <Build Include="Service Broker\__ReportPublisher_Contract_Synchronous.sql" />
+    <Build Include="Service Broker\__ReportPublisher_Message_Complete.sql" />
+    <Build Include="Service Broker\__ReportPublisher_Message_Start.sql" />
+    <Build Include="Storage\FactHistoryPFN.sql" />
+    <Build Include="Storage\FactPartitionFunctionLeft.sql" />
+    <Build Include="Storage\FactHistoryPSC.sql" />
+    <Build Include="Service Broker\ReportPublisherConsolidateQueue.sql" />
+    <Build Include="Service Broker\ReportPublisherControllerQueue.sql" />
+    <Build Include="Service Broker\ReportPublisherExceptionQueue.sql" />
+    <Build Include="Service Broker\ReportPublisherFailedQueue.sql" />
+    <Build Include="Service Broker\ReportPublisherMoveQueue.sql" />
+    <Build Include="Service Broker\ReportPublisherRenderQueue.sql" />
+    <Build Include="Service Broker\ReportPublisherStartQueue.sql" />
+    <Build Include="Security\Audit.sql" />
+    <Build Include="Security\Controller.sql" />
+    <Build Include="Security\Demo.sql" />
+    <Build Include="Security\Model.sql" />
+    <Build Include="Security\Report.sql" />
+    <Build Include="Security\Support.sql" />
+    <Build Include="Security\Tabular.sql" />
+    <Build Include="Security\Transform.sql" />
+    <Build Include="Service Broker\ReportPublisher.Consolidate.Service.sql" />
+    <Build Include="Service Broker\ReportPublisher.Controller.Service.sql" />
+    <Build Include="Service Broker\ReportPublisher.Exception.Service.sql" />
+    <Build Include="Service Broker\ReportPublisher.Failed.Service.sql" />
+    <Build Include="Service Broker\ReportPublisher.Move.Service.sql" />
+    <Build Include="Service Broker\ReportPublisher.Render.Service.sql" />
+    <Build Include="Service Broker\ReportPublisher.Start.Service.sql" />
+    <Build Include="Controller\XMLSchemaCollections\BCPXmlSchema.sql" />
+    <Build Include="Controller\XMLSchemaCollections\ReportPublisherXmlSchema.sql" />
+    <Build Include="Controller\Sequences\ReportPublisherLogKey.sql" />
+    <Build Include="Controller\Sequences\DimProductKey.sql" />
+    <Build Include="Controller\Sequences\DimPromotionKey.sql" />
+    <Build Include="Controller\Sequences\DimSalesTerritoryKey.sql" />
+    <Build Include="Controller\Sequences\DimEmployeeKey.sql" />
+    <Build Include="Controller\Sequences\DimResellerKey.sql" />
+    <Build Include="Controller\Sequences\DimCustomerKey.sql" />
+    <Build Include="Controller\Sequences\DimDescriptionKey.sql" />
+    <Build Include="ExtendedProperties.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assemblies\EDWDb.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EDWDb">
+      <HintPath>Assemblies\EDWDb.dll</HintPath>
+      <SqlAssemblyName>EDWDb</SqlAssemblyName>
+      <IsModelAware>True</IsModelAware>
+      <GenerateSqlClrDdl>False</GenerateSqlClrDdl>
+      <SqlOwnerName>dbo</SqlOwnerName>
+      <SqlPermissionSet>SAFE</SqlPermissionSet>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EDWStagingDb\EDWStagingDb.sqlproj">
+      <Name>EDWStagingDb</Name>
+      <Project>{74e84dfe-be3a-4a58-9a88-eb76da9258ec}</Project>
+      <Private>True</Private>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+      <DatabaseSqlCmdVariable>EDWStagingSnapshotDb</DatabaseSqlCmdVariable>
+    </ProjectReference>
+    <ProjectReference Include="..\EDWStagingDb\EDWStagingDb.sqlproj">
+      <Name>EDWStagingDb</Name>
+      <Project>{74e84dfe-be3a-4a58-9a88-eb76da9258ec}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <SqlCmdVariable Include="EDWStagingDb">
+      <DefaultValue>EDWStagingDb</DefaultValue>
+      <Value>$(SqlCmdVar__2)</Value>
+    </SqlCmdVariable>
+    <SqlCmdVariable Include="EDWStagingSnapshotDb">
+      <DefaultValue>EDWStagingDb</DefaultValue>
+      <Value>$(SqlCmdVar__3)</Value>
+    </SqlCmdVariable>
+  </ItemGroup>
+  <ItemGroup>
+    <ArtifactReference Include="C:\Program Files (x86)\Microsoft Visual Studio\2017\SQL\Common7\IDE\Extensions\Microsoft\SQLDB\Extensions\SqlServer\130\SqlSchemas\master.dacpac">
+      <HintPath>$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\130\SqlSchemas\master.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+      <DatabaseVariableLiteralValue>master</DatabaseVariableLiteralValue>
+    </ArtifactReference>
   </ItemGroup>
 </Project>

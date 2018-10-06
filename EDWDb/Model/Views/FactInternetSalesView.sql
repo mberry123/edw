@@ -1,0 +1,31 @@
+﻿CREATE VIEW [Model].[FactInternetSalesView]
+AS
+SELECT [ProductKey]										AS 'Product Key'
+      ,[OrderDateKey]									AS 'Order Date Key'
+      ,[DueDateKey]										AS 'Due Date Key'
+      ,[ShipDateKey]									AS 'Ship Date Key'
+      ,[CustomerKey]									AS 'Customer Key'
+      ,[PromotionKey]									AS 'Promotion Key'
+      ,[CurrencyKey]									AS 'Currency Key'
+      ,[SalesTerritoryKey]								AS 'Sales Territory Key'
+      ,[InternetSalesOrderNumber]						AS 'Internet Sales Order Number'
+      ,[InternetSalesOrderLineNumber]					AS 'Internet Sales Order Line Number'
+      ,[InternetSalesRevisionNumber]					AS 'Internet Sales Revision Number'
+      ,[InternetSalesOrderQuantity]						AS 'Internet Sales Order Quantity'
+      ,[InternetSalesUnitPrice]							AS 'Internet Sales Unit Price'
+      ,[InternetSalesExtendedAmount]					AS 'Internet Sales Extended Amount'
+      ,[InternetSalesUnitPriceDiscountPercentage]		AS 'Internet Sales Unit Price Discount Percentage'
+      ,[InternetSalesDiscountAmount]					AS 'Internet Sales Discount Amount'
+      ,[InternetSalesUnitProductStandardCost]			AS 'Internet Sales Unit Product Standard Cost'
+      ,[InternetSalesTotalProductCost]					AS 'Internet Sales Total Product Cost'
+      ,[InternetSalesAmount]							AS 'Internet Sales Amount'
+      ,[InternetSalesTaxAmount]							AS 'Internet Sales Tax Amount'
+      ,[InternetSalesFreightAmount]						AS 'Internet Sales Freight Amount'
+      ,[CarrierTrackingNumber]							AS 'Internet Sales Carrier Tracking Number'
+      ,[PurchaseOrderNumber]							AS 'Internet Sales Purchase Order Number'
+      ,[OrderDate]										AS 'Internet Sales Order Date'
+      ,[DueDate]										AS 'Internet Sales Due Date'
+      ,[ShipDate]										AS 'Internet Sales Ship Date'
+  FROM [Model].[FactInternetSales];
+
+

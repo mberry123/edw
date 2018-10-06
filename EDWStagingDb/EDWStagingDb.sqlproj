@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>EDWStagingDb</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{74e84dfe-be3a-4a58-9a88-eb76da9258ec}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>EDWStagingDb</RootNamespace>
+    <AssemblyName>EDWStagingDb</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>Latin1_General_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Production\" />
+    <Folder Include="Production\Tables\" />
+    <Folder Include="Person\" />
+    <Folder Include="Person\Tables\" />
+    <Folder Include="Sales\" />
+    <Folder Include="Sales\Tables\" />
+    <Folder Include="HumanResources\" />
+    <Folder Include="HumanResources\Tables\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="dbo\User Defined Types\" />
+    <Folder Include="Person\XMLSchemaCollections\" />
+    <Folder Include="HumanResources\XMLSchemaCollections\" />
+    <Folder Include="Production\XMLSchemaCollections\" />
+    <Folder Include="Sales\XMLSchemaCollections\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Production\Tables\Product.sql" />
+    <Build Include="Person\Tables\StateProvince.sql" />
+    <Build Include="Production\Tables\ProductCostHistory.sql" />
+    <Build Include="Person\Tables\Address.sql" />
+    <Build Include="Production\Tables\ProductDescription.sql" />
+    <Build Include="Person\Tables\BusinessEntity.sql" />
+    <Build Include="Production\Tables\ProductListPriceHistory.sql" />
+    <Build Include="Person\Tables\BusinessEntityAddress.sql" />
+    <Build Include="Production\Tables\ProductModelProductDescriptionCulture.sql" />
+    <Build Include="Person\Tables\ContactType.sql" />
+    <Build Include="Production\Tables\ProductPhoto.sql" />
+    <Build Include="Person\Tables\Person.sql" />
+    <Build Include="Production\Tables\ProductProductPhoto.sql" />
+    <Build Include="Person\Tables\BusinessEntityContact.sql" />
+    <Build Include="Sales\Tables\SalesOrderHeader.sql" />
+    <Build Include="Sales\Tables\Currency.sql" />
+    <Build Include="Sales\Tables\SalesOrderDetail.sql" />
+    <Build Include="Sales\Tables\CountryRegionCurrency.sql" />
+    <Build Include="Sales\Tables\SalesTerritoryImage.sql" />
+    <Build Include="Sales\Tables\Store.sql" />
+    <Build Include="Sales\Tables\SpecialOffer.sql" />
+    <Build Include="Sales\Tables\Customer.sql" />
+    <Build Include="Sales\Tables\StoreOrderStats.sql" />
+    <Build Include="HumanResources\Tables\Department.sql" />
+    <Build Include="Person\Tables\EmailAddress.sql" />
+    <Build Include="HumanResources\Tables\Employee.sql" />
+    <Build Include="HumanResources\Tables\Shift.sql" />
+    <Build Include="HumanResources\Tables\EmployeeDepartmentHistory.sql" />
+    <Build Include="HumanResources\Tables\EmployeePayHistory.sql" />
+    <Build Include="Person\Tables\PhoneNumberType.sql" />
+    <Build Include="Person\Tables\PersonPhone.sql" />
+    <Build Include="Production\Tables\ProductModel.sql" />
+    <Build Include="Production\Tables\ProductCategory.sql" />
+    <Build Include="Person\Tables\CountryRegion.sql" />
+    <Build Include="Production\Tables\ProductSubcategory.sql" />
+    <Build Include="Sales\Tables\SalesTerritory.sql" />
+    <Build Include="dbo\Functions\ufnLeadingZeros.sql" />
+    <Build Include="dbo\Functions\ufnGetProductDealerPrice.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSdel_ProductionProductSubcategory.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSupd_SalesSalesTerritory.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSdel_SalesSalesTerritory.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSins_ProductionProduct.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSins_PersonStateProvince.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSupd_ProductionProduct.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSdel_ProductionProduct.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSupd_PersonStateProvince.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSdel_PersonStateProvince.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSins_ProductionProductCostHistory.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSins_PersonAddress.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSupd_ProductionProductCostHistory.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSdel_ProductionProductCostHistory.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSupd_PersonAddress.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSdel_PersonAddress.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSins_ProductionProductDescription.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSins_PersonBusinessEntity.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSupd_ProductionProductDescription.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSdel_ProductionProductDescription.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSupd_PersonBusinessEntity.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSdel_PersonBusinessEntity.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSins_ProductionProductListPriceHistory.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSins_PersonBusinessEntityAddress.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSupd_ProductionProductListPriceHistory.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSdel_ProductionProductListPriceHistory.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSupd_PersonBusinessEntityAddress.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSdel_PersonBusinessEntityAddress.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSins_ProductionProductModelProductDescriptionCulture.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSins_PersonContactType.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSupd_ProductionProductModelProductDescriptionCulture.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSdel_ProductionProductModelProductDescriptionCulture.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSupd_PersonContactType.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSdel_PersonContactType.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSins_ProductionProductPhoto.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSins_PersonPerson.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSupd_ProductionProductPhoto.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSdel_ProductionProductPhoto.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSupd_PersonPerson.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSdel_PersonPerson.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSins_ProductionProductProductPhoto.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSins_PersonBusinessEntityContact.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSupd_ProductionProductProductPhoto.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSdel_ProductionProductProductPhoto.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSupd_PersonBusinessEntityContact.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSdel_PersonBusinessEntityContact.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSins_SalesSalesOrderHeader.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSins_SalesCurrency.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSupd_SalesSalesOrderHeader.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSdel_SalesSalesOrderHeader.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSupd_SalesCurrency.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSdel_SalesCurrency.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSins_SalesSalesOrderDetail.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSins_SalesCountryRegionCurrency.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSupd_SalesSalesOrderDetail.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSdel_SalesSalesOrderDetail.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSupd_SalesCountryRegionCurrency.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSdel_SalesCountryRegionCurrency.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSins_SalesSalesTerritoryImage.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSupd_SalesSalesTerritoryImage.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSins_SalesStore.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSdel_SalesSalesTerritoryImage.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSupd_SalesStore.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSdel_SalesStore.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSins_SalesSpecialOffer.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSupd_SalesSpecialOffer.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSins_SalesCustomer.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSdel_SalesSpecialOffer.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSupd_SalesCustomer.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSdel_SalesCustomer.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSins_SalesStoreOrderStats.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSupd_SalesStoreOrderStats.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSins_HumanResourcesDepartment.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSdel_SalesStoreOrderStats.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSupd_HumanResourcesDepartment.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSdel_HumanResourcesDepartment.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSins_PersonEmailAddress.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSupd_PersonEmailAddress.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSdel_PersonEmailAddress.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSins_HumanResourcesEmployee.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSupd_HumanResourcesEmployee.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSdel_HumanResourcesEmployee.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSins_HumanResourcesShift.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSupd_HumanResourcesShift.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSdel_HumanResourcesShift.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSins_HumanResourcesEmployeeDepartmentHistory.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSupd_HumanResourcesEmployeeDepartmentHistory.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSdel_HumanResourcesEmployeeDepartmentHistory.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSins_HumanResourcesEmployeePayHistory.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSupd_HumanResourcesEmployeePayHistory.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSdel_HumanResourcesEmployeePayHistory.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSins_PersonPhoneNumberType.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSupd_PersonPhoneNumberType.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSdel_PersonPhoneNumberType.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSins_PersonPersonPhone.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSupd_PersonPersonPhone.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSdel_PersonPersonPhone.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSins_ProductionProductModel.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSupd_ProductionProductModel.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSdel_ProductionProductModel.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSins_ProductionProductCategory.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSins_PersonCountryRegion.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSupd_ProductionProductCategory.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSdel_ProductionProductCategory.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSupd_PersonCountryRegion.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSdel_PersonCountryRegion.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSins_ProductionProductSubcategory.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSins_SalesSalesTerritory.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSupd_ProductionProductSubcategory.sql" />
+    <Build Include="dbo\User Defined Types\Flag.sql" />
+    <Build Include="dbo\User Defined Types\Name.sql" />
+    <Build Include="dbo\User Defined Types\NameStyle.sql" />
+    <Build Include="dbo\User Defined Types\Phone.sql" />
+    <Build Include="dbo\User Defined Types\OrderNumber.sql" />
+    <Build Include="dbo\User Defined Types\AccountNumber.sql" />
+    <Build Include="Security\HumanResources.sql" />
+    <Build Include="Security\Person.sql" />
+    <Build Include="Security\Production.sql" />
+    <Build Include="Security\Sales.sql" />
+    <Build Include="Person\XMLSchemaCollections\AdditionalContactInfoSchemaCollection.sql" />
+    <Build Include="HumanResources\XMLSchemaCollections\HRResumeSchemaCollection.sql" />
+    <Build Include="Person\XMLSchemaCollections\IndividualSurveySchemaCollection.sql" />
+    <Build Include="Production\XMLSchemaCollections\ManuInstructionsSchemaCollection.sql" />
+    <Build Include="Production\XMLSchemaCollections\ProductDescriptionSchemaCollection.sql" />
+    <Build Include="Sales\XMLSchemaCollections\StoreSurveySchemaCollection.sql" />
+  </ItemGroup>
+</Project>

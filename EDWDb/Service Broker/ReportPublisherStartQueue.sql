@@ -1,0 +1,2 @@
+﻿CREATE QUEUE [Controller].[ReportPublisherStartQueue];
+
