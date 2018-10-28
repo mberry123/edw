@@ -401,11 +401,6 @@
       <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
       <DatabaseSqlCmdVariable>EDWStagingSnapshotDb</DatabaseSqlCmdVariable>
     </ProjectReference>
-    <ProjectReference Include="..\EDWStagingDb\EDWStagingDb.sqlproj">
-      <Name>EDWStagingDb</Name>
-      <Project>{74e84dfe-be3a-4a58-9a88-eb76da9258ec}</Project>
-      <Private>True</Private>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <SqlCmdVariable Include="EDWStagingDb">
